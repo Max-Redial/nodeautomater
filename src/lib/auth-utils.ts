@@ -23,5 +23,5 @@ export const requireUnAuth = async () => {
     redirect("/");
   }
 
-  return session;
+  return null;
 };

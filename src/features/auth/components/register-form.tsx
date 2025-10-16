@@ -84,6 +84,24 @@ export function RegisterForm() {
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <div className="grid gap-6">
                 <div className="flex flex-col gap-4">
+                  <Button variant="outline" className="w-full" type="button">
+                    <Image
+                      src="/logos/github.svg"
+                      alt="github"
+                      width={20}
+                      height={20}
+                    />
+                    Continue with Github
+                  </Button>
+                  <Button variant="outline" className="w-full" type="button">
+                    <Image
+                      src="/logos/google.svg"
+                      alt="google"
+                      width={20}
+                      height={20}
+                    />
+                    Continue with Google
+                  </Button>
                   <div className="grid gap-6">
                     <FormField
                       control={form.control}
