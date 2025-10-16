@@ -14,6 +14,12 @@ export const appRouter = createTRPCRouter({
       },
     });
   }),
+  testAi: protectedProcedure.mutation(async () => {
+    await inngest.send({
+      name: "execute/ai",
+    });
+    return { sucess: true, message: "Event sent" };
+  }),
 });
 // export type definition of API
 export type AppRouter = typeof appRouter;
