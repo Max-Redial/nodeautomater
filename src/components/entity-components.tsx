@@ -29,7 +29,7 @@ export const EntityHeader = ({
       <div className="flex flex-col">
         <h1 className="text-lg md:text-xl font-semibold">{title}</h1>
         {description && (
-          <p className="text-mutedtext-muted-foreground text-xs md:text-sm">
+          <p className="text-muted-foreground text-xs md:text-sm">
             {description}
           </p>
         )}
