@@ -129,7 +129,7 @@ export const EntityPagination = ({
           onClick={() => onPageChange(Math.max(1, page - 1))}
           disabled={page === 1 || disabled}
         >
-          Previuos
+          Previous
         </Button>
         <Button
           variant="outline"
