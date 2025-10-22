@@ -27,6 +27,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { useCreateWorkflow } from "@/features/workflows/hooks/use-workflows";
 
 type EntityHeaderProps = {
   title: string;
@@ -182,7 +183,6 @@ export const LoadingView = ({ message }: StateViewProps) => {
 };
 
 export const ErrorView = ({ message }: StateViewProps) => {
-  console.log("Error from Erroview", message);
   return (
     <div className="flex justify-center items-center h-full flex-1 flex-col gap-y-4">
       <AlertTriangleIcon className="size-6 text-primary" />
