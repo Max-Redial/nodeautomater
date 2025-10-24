@@ -8,7 +8,7 @@ import { GlobeIcon } from "lucide-react";
 type HttpRequestNodeData = {
   endpoint?: string;
   method?: "GET" | "POST" | "PUT" | "DELETE";
-  bpdy?: string;
+  body?: string;
   [key: string]: unknown;
 };
 
