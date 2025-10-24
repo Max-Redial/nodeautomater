@@ -1,0 +1,60 @@
+"use client";
+
+import { type NodeProps, Position } from "@xyflow/react";
+import type { LucideIcon } from "lucide-react";
+
+import { memo, ReactNode } from "react";
+import Image from "next/image";
+import { WorkFlowNode } from "@/components/workflow-node";
+import { BaseNode, BaseNodeContent } from "@/components/react-flow/base-node";
+import { BaseHandle } from "@/components/react-flow/base-handle";
+
+interface BaseExecutionProps extends NodeProps {
+  icon: LucideIcon | string;
+  name: string;
+  description?: string;
+  children?: ReactNode;
+  onDoubleClick?: () => void;
+  onSettings?: () => void;
+}
+
+export const BaseExecutionNode = memo(
+  ({
+    icon: Icon,
+    name,
+    description,
+    children,
+    onDoubleClick,
+    onSettings,
+  }: BaseExecutionProps) => {
+    // TODO : DELETE HANDLER
+    const handleDelete = () => {};
+    return (
+      <WorkFlowNode
+        name={name}
+        description={description}
+        onSettings={onSettings}
+        onDelete={handleDelete}
+        showToolbar={true}
+      >
+        <BaseNode onDoubleClick={onDoubleClick}>
+          <BaseNodeContent>
+            <div className="flex items-center gap-2">
+              {typeof Icon === "string" ? (
+                <Image src={Icon} alt={name} width={16} height={16} />
+              ) : (
+                <Icon className="size-4 text-muted-foreground" />
+              )}
+              {/*<span className="font-medium">{name}</span>*/}
+            </div>
+            {children}
+            <BaseHandle id="target-1" type="target" position={Position.Left} />
+            <BaseHandle id="source-1" type="source" position={Position.Right} />
+          </BaseNodeContent>
+        </BaseNode>
+      </WorkFlowNode>
+    );
+  },
+);
+
+BaseExecutionNode.displayName = "BaseExecutionNode";
