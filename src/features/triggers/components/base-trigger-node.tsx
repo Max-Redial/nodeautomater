@@ -59,4 +59,4 @@ export const BaseTriggerNode = memo(
   },
 );
 
-BaseTriggerNode.displayName = "BaseExecutionNode";
+BaseTriggerNode.displayName = "BaseTriggerNode";
